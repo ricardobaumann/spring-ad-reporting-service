@@ -21,11 +21,11 @@ import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
-public class DataLoaderSucessTest {
+public class DataLoaderSuccessTest {
 
     private final SiteMetricRepo siteMetricRepo = mock(SiteMetricRepo.class);
 
-    private final String inputPath = new File("src/test/resources").getAbsolutePath();
+    private final String inputPath = new File("src/test/resources/ok").getAbsolutePath();
 
     private final DataLoader dataLoader = new DataLoader(siteMetricRepo, inputPath);
     private List<SiteMetric> metrics;

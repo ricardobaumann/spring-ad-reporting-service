@@ -52,7 +52,7 @@ public class DataLoader {
                         siteMetric.seteCpm(new BigDecimal(((double) siteMetric.getRevenue().intValue() * 1000) + siteMetric.getImpressions()));
                         return siteMetric;
                     }).collect(Collectors.toList()));
-        } catch (IOException e) {
+        } catch (IOException | NumberFormatException e) {
             e.printStackTrace();
         }
     }
