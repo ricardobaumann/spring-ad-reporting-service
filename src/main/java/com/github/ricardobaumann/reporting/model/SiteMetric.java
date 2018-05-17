@@ -1,4 +1,4 @@
-package com.ricardobaumann.github.reporting.model;
+package com.github.ricardobaumann.reporting.model;
 
 import java.math.BigDecimal;
 import java.util.Objects;

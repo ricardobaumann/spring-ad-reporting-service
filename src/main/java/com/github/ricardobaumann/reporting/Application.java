@@ -1,4 +1,4 @@
-package com.ricardobaumann.github.reporting;
+package com.github.ricardobaumann.reporting;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

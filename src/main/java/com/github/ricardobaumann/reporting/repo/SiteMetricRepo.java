@@ -1,7 +1,7 @@
-package com.ricardobaumann.github.reporting.repo;
+package com.github.ricardobaumann.reporting.repo;
 
-import com.ricardobaumann.github.reporting.model.Report;
-import com.ricardobaumann.github.reporting.model.SiteMetric;
+import com.github.ricardobaumann.reporting.model.Report;
+import com.github.ricardobaumann.reporting.model.SiteMetric;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
@@ -11,7 +11,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface SiteMetricRepo extends CrudRepository<SiteMetric, Long> {
 
-    @Query("select new com.ricardobaumann.github.reporting.model.Report(" +
+    @Query("select new com.github.ricardobaumann.reporting.model.Report(" +
             "sum(m.requests)," +
             "sum(m.impressions)," +
             "sum(m.clicks)," +

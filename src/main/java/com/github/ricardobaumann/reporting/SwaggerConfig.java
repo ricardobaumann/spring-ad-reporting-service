@@ -1,4 +1,4 @@
-package com.ricardobaumann.github.reporting;
+package com.github.ricardobaumann.reporting;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -16,7 +16,7 @@ public class SwaggerConfig {
     public Docket api() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.ricardobaumann.github.reporting.controller"))
+                .apis(RequestHandlerSelectors.basePackage("com.github.ricardobaumann.reporting.controller"))
                 .paths(PathSelectors.any())
                 .build();
     }

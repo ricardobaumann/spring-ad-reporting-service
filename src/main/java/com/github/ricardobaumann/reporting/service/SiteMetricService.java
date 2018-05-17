@@ -1,8 +1,8 @@
-package com.ricardobaumann.github.reporting.service;
+package com.github.ricardobaumann.reporting.service;
 
-import com.ricardobaumann.github.reporting.model.Report;
-import com.ricardobaumann.github.reporting.model.SiteMetric;
-import com.ricardobaumann.github.reporting.repo.SiteMetricRepo;
+import com.github.ricardobaumann.reporting.model.Report;
+import com.github.ricardobaumann.reporting.model.SiteMetric;
+import com.github.ricardobaumann.reporting.repo.SiteMetricRepo;
 
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVRecord;

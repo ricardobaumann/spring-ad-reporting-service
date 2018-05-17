@@ -1,7 +1,7 @@
-package com.ricardobaumann.github.reporting.repo;
+package com.github.ricardobaumann.reporting.repo;
 
-import com.ricardobaumann.github.reporting.model.Report;
-import com.ricardobaumann.github.reporting.model.SiteMetric;
+import com.github.ricardobaumann.reporting.model.Report;
+import com.github.ricardobaumann.reporting.model.SiteMetric;
 
 import org.junit.Before;
 import org.junit.Test;

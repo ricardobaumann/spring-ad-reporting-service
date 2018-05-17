@@ -1,6 +1,6 @@
-package com.ricardobaumann.github.reporting.service;
+package com.github.ricardobaumann.reporting.service;
 
-import com.ricardobaumann.github.reporting.repo.SiteMetricRepo;
+import com.github.ricardobaumann.reporting.repo.SiteMetricRepo;
 
 import org.junit.Test;
 import org.mockito.Mockito;
