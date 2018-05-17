@@ -47,7 +47,7 @@ public class SiteMetricService {
         }
         siteMetricRepo.deleteAll();
         Arrays.stream(Objects.requireNonNull(
-                new File(inputDataPath).listFiles()))
+                new File(inputDataPath).listFiles((dir, name) -> name.endsWith(".csv"))))
                 .forEach(file -> reloadFromFile(String.format(file.getAbsolutePath(), inputDataPath)));
     }
 
