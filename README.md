@@ -7,7 +7,7 @@ A simple spring boot service to load and summarize ad metric information.
 - Gradle
 
 ## Running
-- On the root folder run `./gradlew bootRun -Dinput.data.path=<path_to_data_files>`
+- On the root folder run `./gradlew bootRun -Dinput.data.path=<path_to_csv_data_files>`
 - You can use the csv files on the root folder to give it a try!
 
 ## API Usage
