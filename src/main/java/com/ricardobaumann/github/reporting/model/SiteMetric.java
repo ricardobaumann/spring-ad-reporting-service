@@ -6,6 +6,8 @@ import java.util.Objects;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 
 @Entity
 public class SiteMetric {
@@ -26,6 +28,8 @@ public class SiteMetric {
 
     private BigDecimal revenue;
 
+    @Min(1)
+    @Max(12)
     private Integer month;
 
     private BigDecimal ctr;

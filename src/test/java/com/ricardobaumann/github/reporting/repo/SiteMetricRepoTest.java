@@ -13,7 +13,10 @@ import org.springframework.test.context.junit4.SpringRunner;
 import java.math.BigDecimal;
 import java.util.Arrays;
 
+import javax.persistence.RollbackException;
+
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 @SpringBootTest
 @RunWith(SpringRunner.class)
@@ -52,6 +55,20 @@ public class SiteMetricRepoTest {
                 metric2,
                 metric3
         ));
+    }
+
+    @Test
+    public void shouldValidateMonthLesserThan1() {
+        SiteMetric metric = new SiteMetric("site2", 20, 30, 40, 50, new BigDecimal(60.1), 0);
+
+        assertThatThrownBy(() -> siteMetricRepo.save(metric)).hasCauseInstanceOf(RollbackException.class);
+    }
+
+    @Test
+    public void shouldValidateMonthGreaterThan12() {
+        SiteMetric metric = new SiteMetric("site2", 20, 30, 40, 50, new BigDecimal(60.1), 13);
+
+        assertThatThrownBy(() -> siteMetricRepo.save(metric)).hasCauseInstanceOf(RollbackException.class);
     }
 
     @Test
