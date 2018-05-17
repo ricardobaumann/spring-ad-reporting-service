@@ -21,13 +21,13 @@ import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
-public class DataLoaderSuccessTest {
+public class SiteMetricServiceSuccessTest {
 
     private final SiteMetricRepo siteMetricRepo = mock(SiteMetricRepo.class);
 
     private final String inputPath = new File("src/test/resources/ok").getAbsolutePath();
 
-    private final DataLoader dataLoader = new DataLoader(siteMetricRepo, inputPath);
+    private final SiteMetricService siteMetricService = new SiteMetricService(siteMetricRepo, inputPath);
     private List<SiteMetric> metrics;
     private MathContext mathContext = new MathContext(3, RoundingMode.UP);
 
@@ -39,7 +39,7 @@ public class DataLoaderSuccessTest {
         when(siteMetricRepo.saveAll(any())).thenReturn(null);
 
         //When
-        dataLoader.reloadDatabase();
+        siteMetricService.reloadDatabase();
 
         //Then
         verify(siteMetricRepo, times(2)).saveAll(metricArgumentCaptor.capture());
@@ -50,8 +50,8 @@ public class DataLoaderSuccessTest {
     public void shouldLoadFilesSucessfully() {
         assertThat(metrics)
                 .containsExactlyInAnyOrder(
-                        new SiteMetric("desktop web", 12483775, 11866157, 30965, 7608, new BigDecimal("23555.46")),
-                        new SiteMetric("desktop web", 11243875, 10366355, 40456, 1456, new BigDecimal("15745.32"))
+                        new SiteMetric("desktop web", 12483775, 11866157, 30965, 7608, new BigDecimal("23555.46"), 1),
+                        new SiteMetric("desktop web", 11243875, 10366355, 40456, 1456, new BigDecimal("15745.32"), 2)
                 );
     }
 

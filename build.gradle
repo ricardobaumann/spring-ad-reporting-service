@@ -33,6 +33,9 @@ dependencies {
 
     // https://mvnrepository.com/artifact/org.apache.commons/commons-csv
     compile group: 'org.apache.commons', name: 'commons-csv', version: '1.5'
+    // https://mvnrepository.com/artifact/com.google.guava/guava
+    compile group: 'com.google.guava', name: 'guava', version: '25.0-jre'
+
 
     testCompile 'org.assertj:assertj-core:3.9.1'
     testCompile('org.springframework.boot:spring-boot-starter-test')

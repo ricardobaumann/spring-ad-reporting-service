@@ -12,13 +12,13 @@ import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
-public class DataLoaderValidationTest {
+public class SiteMetricServiceValidationTest {
 
     private final SiteMetricRepo siteMetricRepo = mock(SiteMetricRepo.class);
 
     private final String inputPath = new File("src/test/resources/fail").getAbsolutePath();
 
-    private final DataLoader dataLoader = new DataLoader(siteMetricRepo, inputPath);
+    private final SiteMetricService siteMetricService = new SiteMetricService(siteMetricRepo, inputPath);
 
     @Test
     public void shouldNotSave() {
@@ -26,7 +26,7 @@ public class DataLoaderValidationTest {
         when(siteMetricRepo.saveAll(any())).thenReturn(null);
 
         //When
-        dataLoader.reloadDatabase();
+        siteMetricService.reloadDatabase();
 
         //Then
         verify(siteMetricRepo, never()).saveAll(any());

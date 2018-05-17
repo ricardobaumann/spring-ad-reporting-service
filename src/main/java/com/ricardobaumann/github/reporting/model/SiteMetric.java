@@ -26,6 +26,8 @@ public class SiteMetric {
 
     private BigDecimal revenue;
 
+    private Integer month;
+
     private BigDecimal ctr;
 
     private BigDecimal cr;
@@ -34,13 +36,14 @@ public class SiteMetric {
 
     private BigDecimal eCpm;
 
-    public SiteMetric(String site, Integer requests, Integer impressions, Integer clicks, Integer conversions, BigDecimal revenue) {
+    public SiteMetric(String site, Integer requests, Integer impressions, Integer clicks, Integer conversions, BigDecimal revenue, Integer month) {
         this.site = site;
         this.requests = requests;
         this.impressions = impressions;
         this.clicks = clicks;
         this.conversions = conversions;
         this.revenue = revenue;
+        this.month = month;
     }
 
     public SiteMetric() {
@@ -134,6 +137,14 @@ public class SiteMetric {
         this.eCpm = eCpm;
     }
 
+    public Integer getMonth() {
+        return month;
+    }
+
+    public void setMonth(Integer month) {
+        this.month = month;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -149,14 +160,16 @@ public class SiteMetric {
                 Objects.equals(impressions, that.impressions) &&
                 Objects.equals(clicks, that.clicks) &&
                 Objects.equals(conversions, that.conversions) &&
-                Objects.equals(revenue, that.revenue);
+                Objects.equals(revenue, that.revenue) &&
+                Objects.equals(month, that.month);
     }
 
     @Override
     public int hashCode() {
 
-        return Objects.hash(id, site, requests, impressions, clicks, conversions, revenue);
+        return Objects.hash(id, site, requests, impressions, clicks, conversions, revenue, month);
     }
+
 
     @Override
     public String toString() {
@@ -168,6 +181,7 @@ public class SiteMetric {
                 ", clicks=" + clicks +
                 ", conversions=" + conversions +
                 ", revenue=" + revenue +
+                ", month=" + month +
                 ", ctr=" + ctr +
                 ", cr=" + cr +
                 ", fillRate=" + fillRate +
