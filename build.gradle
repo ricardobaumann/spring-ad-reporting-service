@@ -36,6 +36,11 @@ dependencies {
     // https://mvnrepository.com/artifact/com.google.guava/guava
     compile group: 'com.google.guava', name: 'guava', version: '25.0-jre'
 
+    // https://mvnrepository.com/artifact/io.springfox/springfox-swagger2
+    compile group: 'io.springfox', name: 'springfox-swagger2', version: '2.7.0'
+    compile group: 'io.springfox', name: 'springfox-swagger-ui', version: '2.7.0'
+
+
 
     testCompile 'org.assertj:assertj-core:3.9.1'
     testCompile('org.springframework.boot:spring-boot-starter-test')
