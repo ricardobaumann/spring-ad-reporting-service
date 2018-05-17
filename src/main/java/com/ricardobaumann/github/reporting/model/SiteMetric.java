@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 
 @Entity
 public class SiteMetric {
@@ -16,28 +17,39 @@ public class SiteMetric {
     @GeneratedValue
     private Long id;
 
+    @NotNull
     private String site;
 
+    @NotNull
     private Integer requests;
 
+    @NotNull
     private Integer impressions;
 
+    @NotNull
     private Integer clicks;
 
+    @NotNull
     private Integer conversions;
 
+    @NotNull
     private BigDecimal revenue;
 
+    @NotNull
     @Min(1)
     @Max(12)
     private Integer month;
 
+    @NotNull
     private BigDecimal ctr;
 
+    @NotNull
     private BigDecimal cr;
 
+    @NotNull
     private BigDecimal fillRate;
 
+    @NotNull
     private BigDecimal eCpm;
 
     public SiteMetric(String site, Integer requests, Integer impressions, Integer clicks, Integer conversions, BigDecimal revenue, Integer month) {
